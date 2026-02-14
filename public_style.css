@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: #0a0e27;
+  color: #00ff88;
+  overflow: hidden;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#ui-root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Loading screen */
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.loading-spinner {
+  border: 4px solid rgba(0, 255, 136, 0.3);
+  border-top-color: #00ff88;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* HUD styles */
+.hud {
+  position: absolute;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 0 0 10px #00ff88;
+}
+
+.position {
+  top: 20px;
+  left: 20px;
+  font-size: 32px;
+}
+
+.speed {
+  bottom: 20px;
+  left: 20px;
+}
+
+.lap-time {
+  top: 20px;
+  right: 20px;
+}
+
+.minimap {
+  bottom: 20px;
+  right: 20px;
+  width: 200px;
+  height: 200px;
+  border: 2px solid #00ff88;
+  border-radius: 5px;
+  background: rgba(10, 14, 39, 0.8);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hud {
+    font-size: 14px;
+  }
+  
+  .position {
+    font-size: 24px;
+  }
+  
+  .minimap {
+    width: 150px;
+    height: 150px;
+  }
+}
